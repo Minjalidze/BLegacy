@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{5EF8E6E9-0F73-4FD6-9A75-EF6192B67967}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>BCore</RootNamespace>
+        <AssemblyName>BCore</AssemblyName>
+        <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>none</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>C:\BLegacy\Server\rust_server_Data\Managed</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Assembly-CSharp">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Actor">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Actor.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Cursor">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Cursor.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Geometry">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Geometry.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.HitBox">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.HitBox.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.ID">
+            <HintPath>..\..\..\BlessServer\rust_server_Data\Managed\Facepunch.ID.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.MeshBatch">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.MeshBatch.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Movement">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Movement.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Prefetch">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Prefetch.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Utility">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Facepunch.Utility.dll</HintPath>
+        </Reference>
+        <Reference Include="Google.ProtocolBuffers">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Google.ProtocolBuffers.dll</HintPath>
+        </Reference>
+        <Reference Include="Google.ProtocolBuffers.Serialization">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Google.ProtocolBuffers.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="LitJSON">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\LitJSON.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="Oxide.Core">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Oxide.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Oxide.RustLegacy">
+            <HintPath>C:\BLegacy\Server\rust_server_Data\Managed\Oxide.RustLegacy.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+        <Reference Include="uLink">
+            <HintPath>..\..\..\BlessServer\rust_server_Data\Managed\uLink.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>..\..\..\BlessServer\rust_server_Data\Managed\UnityEngine.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Bootstrapper.cs" />
+        <Compile Include="Broadcast.cs" />
+        <Compile Include="ClanSystem\ClanData.cs" />
+        <Compile Include="ClanSystem\ClanLevel.cs" />
+        <Compile Include="ClanSystem\Clans.cs" />
+        <Compile Include="CommandHook.cs" />
+        <Compile Include="Commands\CommandListener.cs" />
+        <Compile Include="Commands\ICommand.cs" />
+        <Compile Include="Configs\Commands.cs" />
+        <Compile Include="Configs\Config.cs" />
+        <Compile Include="Configs\Destroy.cs" />
+        <Compile Include="Configs\Economy.cs" />
+        <Compile Include="Configs\Kits.cs" />
+        <Compile Include="Configs\LoadOut.cs" />
+        <Compile Include="Configs\Messages.cs" />
+        <Compile Include="Configs\Override.cs" />
+        <Compile Include="Configs\Ranks.cs" />
+        <Compile Include="EventSystem\Events.cs" />
+        <Compile Include="EventSystem\EventTimer.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Include="Helper.cs" />
+        <Compile Include="Hooks\HookListener.cs" />
+        <Compile Include="Hooks\HookLoader.cs" />
+        <Compile Include="Hooks\HookMethod.cs" />
+        <Compile Include="Hooks\MinHook.cs" />
+        <Compile Include="Mods\Boot.cs" />
+        <Compile Include="Mods\CPPMod.cs" />
+        <Compile Include="Mods\Mod.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Synchronization.cs" />
+        <Compile Include="System.IO\BitStream.cs" />
+        <Compile Include="System.IO\BitStreamCodec.cs" />
+        <Compile Include="System.IO\CRC32.cs" />
+        <Compile Include="System.IO\ZLib\Deflate.cs" />
+        <Compile Include="System.IO\ZLib\DeflateStream.cs" />
+        <Compile Include="System.IO\ZLib\GZipStream.cs" />
+        <Compile Include="System.IO\ZLib\Inflate.cs" />
+        <Compile Include="System.IO\ZLib\InfTree.cs" />
+        <Compile Include="System.IO\ZLib\Tree.cs" />
+        <Compile Include="System.IO\ZLib\Zlib.cs" />
+        <Compile Include="System.IO\ZLib\ZlibBaseStream.cs" />
+        <Compile Include="System.IO\ZLib\ZlibCodec.cs" />
+        <Compile Include="System.IO\ZLib\ZlibConstants.cs" />
+        <Compile Include="System.IO\ZLib\ZlibStream.cs" />
+        <Compile Include="Users\Bans.cs" />
+        <Compile Include="Users\ClientRPC.cs" />
+        <Compile Include="Users\Data.cs" />
+        <Compile Include="Users\User.cs" />
+        <Compile Include="WorldManagement\Override.cs" />
+        <Compile Include="WorldManagement\Spawn.cs" />
+        <Compile Include="WorldManagement\World.cs" />
+        <Compile Include="WorldManagement\Zones.cs" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+           Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+      -->
+</Project>
